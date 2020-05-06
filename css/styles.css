@@ -1,0 +1,237 @@
+/* ELEMENT & CLASS STYLES */
+
+* {
+    border: 0;
+    padding: 0; 
+    margin: 0 auto;
+    text-align: center;
+}
+
+body {
+    
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 50px;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Had to calculate webidth and set that as height. Is there an easier way to do this? */
+.header-image {
+    background-size: cover;
+    width: 100vw;
+    height: calc(100vw * .438);
+    position: relative;
+}
+
+.aurora {
+    background-image: url(/img/aurora.jpg);
+}
+
+.squirrel {
+    background-image: url(/img/squirrel.jpg);
+}
+
+h1 {
+    color: white;
+    vertical-align: bottom;
+    position: absolute;
+    left: 20%;
+    bottom: 30%;
+    transition: ease-in;
+    transition-duration: 1.5s;
+    transition-delay: 1s;
+}
+
+nav.sticky {    
+    width: 100%;
+    background-color: #142850;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+nav.fixed {
+    width: 100%;
+    background-color: #142850;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+
+nav a {
+    color: white;
+    display: inline-block;
+    width: 32%;
+    text-decoration: none;
+    padding: 10px 0px 6px;
+}
+
+nav a.current-page {
+    font-weight: bold;
+    border-bottom: 4px solid ;
+}
+
+.project-selector {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: auto;
+    padding-top: 38px;
+}
+
+.project-selector li {
+    position: relative;
+    display: inline;
+}
+
+.project-selector li img {
+    width: 30vw;
+    height: auto;
+}
+
+.project-selector li div {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: grey;
+    color: white;
+    font-weight: normal;
+    opacity: 85%;
+}
+
+.project-selector li a {
+    display: none;
+    color: white;
+}
+
+
+article {
+    background-color: #dae1e7;
+    margin: 12px;
+    padding: 15px;
+}
+
+/* Prevent margin collapse with footer */
+
+.about-me, 
+p {
+    text-align: justify;
+    padding-top: 1em;
+}
+
+article.project {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+article.project img {
+    width: 100%;
+}
+
+article a {
+    color: #142850;
+}
+
+.project-description {
+    padding: 10px;
+}
+
+h2 {
+    flex-basis: 100%;
+    padding-bottom: 10px;
+}
+
+iframe {
+    width: 90%;
+}
+
+footer {
+    width: 100%;
+    background-color: #142850;
+    padding: 10px 0px;
+    position: absolute;
+    bottom: 0;
+    margin-top: 24px;
+}
+
+footer a {
+    padding: 0 10px;
+}
+
+/* Pseudo styles */
+nav a:hover, 
+nav a:active {
+    border-bottom: 4px solid;
+}
+
+.project-selector li:hover {
+    z-index: 2;
+    box-shadow: 0px 10px 20px 0px black;
+}
+
+.project-selector li:hover a {
+    display: block;
+}
+
+article a:hover {
+    font-weight: bold;
+}
+
+
+/* Media queries */
+
+  @media only screen and (orientation: landscape) {
+   
+
+    /* BUG: project image doesn't maintain scale when squished horizontally */
+    article.project img {
+        width: 60%;
+        height: auto; 
+    }
+
+    .project-selector li img {
+        width: 18vw;
+    }
+
+    article.project img {
+        flex-basis: 60%;
+    }
+    
+    .project-description {
+        flex-basis: 35%;
+    }
+
+    article.project {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+  }
+
+  @media only screen and (min-width: 1200px) {
+
+    .container {
+        width: 90%;
+    }
+
+  }
+
+  @media only screen and (min-width: 1600px) {
+
+    .container {
+        width: 80%;
+    }
+
+  }
+
+  @media only screen and (min-width: 2000px) {
+
+    .container {
+        width: 70%;
+    }
+
+  }
