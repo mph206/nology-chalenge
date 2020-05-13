@@ -5,21 +5,19 @@
     padding: 0; 
     margin: 0 auto;
     text-align: center;
+    box-sizing: border-box;
 }
 
 body {
-    
-    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     padding-bottom: 50px;
     min-height: 100vh;
     position: relative;
 }
 
-/* Had to calculate webidth and set that as height. Is there an easier way to do this? */
 .header-image {
     background-size: cover;
-    width: 100vw;
+    width: 100%;
     height: calc(100vw * .438);
     position: relative;
 }
@@ -32,33 +30,27 @@ body {
     background-image: url(/img/squirrel.jpg);
 }
 
+main {
+    width: 95%;
+    height: 800px;
+    position: relative;
+    overflow: hidden;
+}
+
 h1 {
     color: white;
     vertical-align: bottom;
     position: absolute;
     left: 20%;
     bottom: 30%;
-    transition: ease-in;
-    transition-duration: 1.5s;
-    transition-delay: 1s;
 }
 
 nav.sticky {    
-    width: 100%;
     background-color: #142850;
-    position: -webkit-sticky;
     position: sticky;
-    top: 0;
-}
-
-nav.fixed {
-    width: 100%;
-    background-color: #142850;
-    position: fixed;
     top: 0;
     z-index: 1;
 }
-
 
 nav a {
     color: white;
@@ -70,7 +62,7 @@ nav a {
 
 nav a.current-page {
     font-weight: bold;
-    border-bottom: 4px solid ;
+    border-bottom: 4px solid white;
 }
 
 .project-selector {
@@ -78,7 +70,6 @@ nav a.current-page {
     flex-direction: row;
     flex-wrap: nowrap;
     overflow: auto;
-    padding-top: 38px;
 }
 
 .project-selector li {
@@ -87,23 +78,18 @@ nav a.current-page {
 }
 
 .project-selector li img {
-    width: 30vw;
+    width: 35vw;
     height: auto;
 }
 
 .project-selector li div {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
     background-color: grey;
     color: white;
     font-weight: normal;
     opacity: 85%;
-}
-
-.project-selector li a {
-    display: none;
-    color: white;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
 }
 
 
@@ -113,21 +99,17 @@ article {
     padding: 15px;
 }
 
-/* Prevent margin collapse with footer */
+.project-selector li a {
+    color: white;
+    display: none;
+}
 
 .about-me, 
 p {
     text-align: justify;
-    padding-top: 1em;
 }
 
-article.project {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-article.project img {
+#project-detail img {
     width: 100%;
 }
 
@@ -144,8 +126,22 @@ h2 {
     padding-bottom: 10px;
 }
 
+#personal, 
+#projects {
+    position: absolute;
+    transform: translateX(100vw);
+    width: 100%;
+    overflow-y: auto;
+    top: 0px;
+    margin-left: auto;
+}
+
 iframe {
     width: 90%;
+}
+
+#project-detail {
+    padding-top: 10px;
 }
 
 footer {
@@ -168,70 +164,157 @@ nav a:active {
 }
 
 .project-selector li:hover {
-    z-index: 2;
     box-shadow: 0px 10px 20px 0px black;
+    z-index: 1;
 }
 
 .project-selector li:hover a {
     display: block;
+    bottom: 100px;
 }
 
-article a:hover {
-    font-weight: bold;
+.project-selector li:hover h3 {
+    display: block;
+    bottom: 100px;
 }
 
+a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
 
-/* Media queries */
+#dark-toggle:hover {
+    cursor: pointer;
+}
 
-  @media only screen and (orientation: landscape) {
-   
+/* MEDIA QUERIES */
 
-    /* BUG: project image doesn't maintain scale when squished horizontally */
-    article.project img {
+@media only screen and (orientation: landscape) {
+
+/* BUG: project image doesn't maintain scale when squished horizontally */
+    #project-detail img {
         width: 60%;
         height: auto; 
+        flex-basis: 60%;
     }
 
     .project-selector li img {
         width: 18vw;
     }
 
-    article.project img {
-        flex-basis: 60%;
-    }
-    
     .project-description {
         flex-basis: 35%;
     }
 
-    article.project {
+    #project-detail {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
     }
 
-  }
+}
 
-  @media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 660px) and (orientation: portrait) {
+    main {
+        height: calc(100vw * 1.25);
+    }
+}
+
+@media only screen and (min-width: 660px) and (orientation: landscape) {
+    main {
+        height: calc(100vw * 0.55);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
 
     .container {
         width: 90%;
     }
 
-  }
+}
 
-  @media only screen and (min-width: 1600px) {
+@media only screen and (min-width: 1600px) {
 
     .container {
         width: 80%;
     }
 
-  }
+}
 
-  @media only screen and (min-width: 2000px) {
+@media only screen and (min-width: 2000px) {
 
     .container {
         width: 70%;
     }
 
-  }
+}
+
+
+/* ANIMATE PAGE CHANGES WITH KEYFRAMES  */
+
+@keyframes slidefromleft {
+    from {
+        transform: translateX(-100vw);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slidefromright {
+    from {
+        transform: translateX(100vw);
+    }
+   
+    
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slidetoleft {
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(-100vw);
+    }
+}
+
+@keyframes slidetoright{
+    from {
+        transform: translateX(0px);
+    }
+   
+    to {
+        transform: translateX(100vw);
+    }
+}
+
+.slidefromleft {
+    animation-name: slidefromleft;
+    animation-duration: .3s;
+    animation-fill-mode: both;
+
+}
+
+.slidefromright {
+    animation-name: slidefromright;
+    animation-duration: .3s;
+    animation-fill-mode: both;
+}
+
+.slidetoright {
+    animation-name: slidetoright;
+    animation-duration: .3s;
+    animation-fill-mode: both;
+}
+
+.slidetoleft {
+    animation-name: slidetoleft; 
+    animation-duration: .3s;
+    animation-fill-mode: both;
+}
