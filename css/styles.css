@@ -95,6 +95,11 @@ article {
     padding: 15px;
 }
 
+article a {
+    color: #142850;
+    text-decoration: underline;
+}
+
 .project-selector li a {
     color: white;
     display: none;
@@ -105,12 +110,19 @@ p {
     text-align: justify;
 }
 
-#project-detail img {
-    width: 100%;
+.project-detail:nth-child(n+2) {
+    display: none;
 }
 
-article a {
-    color: #142850;
+.project-detail {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.project-detail img {
+    width: 100%;
 }
 
 .project-description {
@@ -134,10 +146,7 @@ h2 {
 
 iframe {
     width: 90%;
-}
-
-#project-detail {
-    padding-top: 10px;
+    height: calc(90vw*.54);
 }
 
 footer {
@@ -174,6 +183,10 @@ nav a:active {
     bottom: 100px;
 }
 
+.project-selector li:hover {
+    cursor: pointer;
+}
+
 a:hover {
     text-decoration: none;
     cursor: pointer;
@@ -185,12 +198,27 @@ a:hover {
 
 /* MEDIA QUERIES */
 
-@media only screen and (orientation: landscape) {
+@media only screen and (min-width: 660px) {
+    main {
+        height: 900px;
+    }
+}
 
-/* BUG: project image doesn't maintain scale when squished horizontally */
-    #project-detail img {
+@media only screen and (min-width: 810px) {
+    main {
+        height: 1000px;
+    }
+}
+
+@media only screen and (min-width: 980px) {
+
+    main {
+        height: 600px;
+    }
+
+    .project-detail img {
         width: 60%;
-        height: auto; 
+        height: calc(100%*.438);
         flex-basis: 60%;
     }
 
@@ -202,32 +230,23 @@ a:hover {
         flex-basis: 35%;
     }
 
-    #project-detail {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
 }
 
-@media only screen and (min-width: 660px) and (orientation: portrait) {
+@media only screen and (min-width: 1080px) {
     main {
-        height: calc(100vw * 1.25);
-    }
-}
-
-@media only screen and (min-width: 660px) and (orientation: landscape) {
-    main {
-        height: calc(100vw * 0.55);
+        height: 700px;
     }
 }
 
 @media only screen and (min-width: 1200px) {
 
+    main {
+        height: 800px;
+    }
+
     .container {
         width: 90%;
     }
-
 }
 
 @media only screen and (min-width: 1600px) {
@@ -313,4 +332,58 @@ a:hover {
     animation-name: slidetoleft; 
     animation-duration: .3s;
     animation-fill-mode: both;
+}
+
+@keyframes article-to-dark {
+    0% {
+        color: black; 
+        background-color: #dae1e7;
+    }
+
+    100% {
+        color: white; 
+        background-color: #2E2E2E;
+    }
+}
+
+.todark {
+    animation-name: article-to-dark; 
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+    animation-direction: normal;
+}
+
+.tolight {
+    animation-name: article-to-dark; 
+    animation-fill-mode: both;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+    animation-direction: reverse;
+}
+
+@keyframes body-to-dark {
+    
+}
+
+@keyframes article-a-to-dark {
+    
+}
+
+@keyframes slide-down {
+    
+    from {
+        transform: translateY(-30%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+.slide-down {
+    animation-name: slide-down;
+    animation-duration: .5s;
 }

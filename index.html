@@ -2,11 +2,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Martin Harrison</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/code.svg">
 </head>
 
 <body>
+
+<!-- HEADER & NAV -->
 
     <header class="header-image aurora">
         <h1>Welcome</h1>
@@ -15,11 +18,13 @@
     <nav class="sticky">
         <div class="container">
             <a id ="home-link" class="current-page">Home</a>
-            <a id="about-link">About</a>
-            <a id="projects-link">Projects</a>
+            <a class="about-link">About</a>
+            <a class="projects-link">Projects</a>
         </div>
     </nav>
     
+<!-- ABOUT/LANDING PAGE -->
+
     <main class="container">
         <article class="article home" id="home">
             <h2 class = "about-me">About me</h2>
@@ -39,9 +44,11 @@
                 I am very excited for the start of the course and look forward to building applications which enable people to put their time to best use and work in a frictionless way. <strong>Roll on May 18th!</strong>
             </p>
             <p>
-                Click <a href="about.html">here to learn more about me</a>, or <a href="projects.html">here to see my projects (ever a work-in-progress)</a>!
+                Click <a class="about-link">here to learn more about me</a>, or <a class="projects-link">here to see my projects (ever a work-in-progress)</a>!
             </p>
         </article>  
+
+<!-- PERSONAL INTEREST PAGE -->
 
         <article class="article personal-interests" id="personal">
             <h2 class = "about-me">About me</h2>
@@ -51,6 +58,8 @@
                 <iframe width="866" height="480" src="https://www.youtube.com/embed/WnInmz-wgXo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </article>
 
+<!-- PROJECT PAGE -->
+    <!-- PROJECT SELECTOR -->
         <article class="article project" id="projects">
             <ul class="project-selector">
                 <li>
@@ -97,17 +106,56 @@
                 </li>
             </ul>
         
-            <!-- Add 6 projects and make the links clickable for each -->
-            <div id="project-detail">
-                <h2>Project heading</h2>
-                <img src="img/bigproj.png" alt="project image">
-                <div class = "project-description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ex similique aliquid? Quibusdam, dicta aliquid quia modi laborum distinctio provident doloribus suscipit velit beatae vel non consectetur quae excepturi magni. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi quod unde quos. Cupiditate libero, cumque rerum ratione aut nemo velit ex architecto ipsa esse quisquam laudantium omnis? Expedita, eligendi quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque cupiditate quidem error voluptatum iusto quos impedit magnam architecto recusandae? Expedita architecto quibusdam labore magni aperiam nam doloremque perspiciatis ad incidunt?</p>
+    <!-- PROJECT DETAILS -->
+            <div class ='project-detail-container'>
+                <div class="project-detail">
+                    <h2>Project 1 heading</h2>
+                    <img src="img/bigproj.png" alt="project image">
+                    <div class = "project-description">
+                            <p>Shrouds plunder schooner Gold Road cutlass gangway coxswain Blimey belaying pin flogging. Starboard piracy avast barkadeer sheet scuppers yardarm jury mast scourge of the seven seas bounty. Scallywag run a shot across the bow keelhaul hempen halter bounty deadlights loot Corsair capstan chantey.Fathom splice the main brace cog pressgang sloop flogging keelhaul boatswain Sea Legs bilged on her anchor. Dance the hempen jig yard league carouser maroon Jack Tar Spanish Main Pieces of Eight execution dock scourge of the seven seas. Davy Jones' Locker fathom Shiver me timbers pressgang league furl Jolly Roger salmagundi topsail gally.</p>
+                    </div>
+                </div>
+                <div class="project-detail">
+                    <h2>Project 2 heading</h2>
+                    <img src="img/bigproj.png" alt="project image">
+                    <div class = "project-description">
+                        <p>Shrouds plunder schooner Gold Road cutlass gangway coxswain Blimey belaying pin flogging. Starboard piracy avast barkadeer sheet scuppers yardarm jury mast scourge of the seven seas bounty. Scallywag run a shot across the bow keelhaul hempen halter bounty deadlights loot Corsair capstan chantey.Fathom splice the main brace cog pressgang sloop flogging keelhaul boatswain Sea Legs bilged on her anchor. Dance the hempen jig yard league carouser maroon Jack Tar Spanish Main Pieces of Eight execution dock scourge of the seven seas. Davy Jones' Locker fathom Shiver me timbers pressgang league furl Jolly Roger salmagundi topsail gally.</p>
+                    </div>
+                </div>
+                <div class="project-detail">
+                    <h2>Project 3 heading</h2>
+                    <img src="img/bigproj.png" alt="project image">
+                    <div class = "project-description">
+                        <p>Shrouds plunder schooner Gold Road cutlass gangway coxswain Blimey belaying pin flogging. Starboard piracy avast barkadeer sheet scuppers yardarm jury mast scourge of the seven seas bounty. Scallywag run a shot across the bow keelhaul hempen halter bounty deadlights loot Corsair capstan chantey.Fathom splice the main brace cog pressgang sloop flogging keelhaul boatswain Sea Legs bilged on her anchor. Dance the hempen jig yard league carouser maroon Jack Tar Spanish Main Pieces of Eight execution dock scourge of the seven seas. Davy Jones' Locker fathom Shiver me timbers pressgang league furl Jolly Roger salmagundi topsail gally.</p>
+                    </div>
+                </div>
+                <div class="project-detail">
+                    <h2>Project 4 heading</h2>
+                    <img src="img/bigproj.png" alt="project image">
+                    <div class = "project-description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ex similique aliquid? Quibusdam, dicta aliquid quia modi laborum distinctio provident doloribus suscipit velit beatae vel non consectetur quae excepturi magni. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi quod unde quos. Cupiditate libero, cumque rerum ratione aut nemo velit ex architecto ipsa esse quisquam laudantium omnis? Expedita, eligendi quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque cupiditate quidem error voluptatum iusto quos impedit magnam architecto recusandae? Expedita architecto quibusdam labore magni aperiam nam doloremque perspiciatis ad incidunt?</p>
+                    </div>
+                </div>
+                <div class="project-detail">
+                    <h2>Project 5 heading</h2>
+                    <img src="img/bigproj.png" alt="project image">
+                    <div class = "project-description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ex similique aliquid? Quibusdam, dicta aliquid quia modi laborum distinctio provident doloribus suscipit velit beatae vel non consectetur quae excepturi magni. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi quod unde quos. Cupiditate libero, cumque rerum ratione aut nemo velit ex architecto ipsa esse quisquam laudantium omnis? Expedita, eligendi quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque cupiditate quidem error voluptatum iusto quos impedit magnam architecto recusandae? Expedita architecto quibusdam labore magni aperiam nam doloremque perspiciatis ad incidunt?</p>
+                    </div>
+                </div>
+                <div class="project-detail">
+                    <h2>Project 6 heading</h2>
+                    <img src="img/bigproj.png" alt="project image">
+                    <div class = "project-description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ex similique aliquid? Quibusdam, dicta aliquid quia modi laborum distinctio provident doloribus suscipit velit beatae vel non consectetur quae excepturi magni. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi quod unde quos. Cupiditate libero, cumque rerum ratione aut nemo velit ex architecto ipsa esse quisquam laudantium omnis? Expedita, eligendi quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque cupiditate quidem error voluptatum iusto quos impedit magnam architecto recusandae? Expedita architecto quibusdam labore magni aperiam nam doloremque perspiciatis ad incidunt?</p>
+                    </div>
                 </div>
             </div>
           </article>
 
     </main>
+
+<!-- FOOTER -->
 
     <footer>
         <a href="https://www.linkedin.com/in/martin-harrison-b8b02a46/" alt="My linkedin profile" target="_blank"><img src="img/linkedin.svg" alt="linkedIn profile"></a>
