@@ -6,52 +6,34 @@ const articles = document.querySelectorAll('article');
 const navLinks = document.querySelectorAll('nav a');
 
 
-// new dark toggle 
-
-darkToggle.addEventListener('click',() => {
-
-    if (article.style.color == "black") {
-      articles.forEach(val => {
-            val.classList.remove("tolight");
-            val.classList.add("todark");
-          })
-    } 
-    
-    else {
-        articles.forEach(val => {
-            val.classList.remove("todark");
-            val.classList.add("tolight");
-        })
-    }
-});
 
 // DARK MODE TOGGLE
 
-// darkToggle.addEventListener('click',() => {
+darkToggle.addEventListener('click',() => {
 
-//     if (article.style.color == "white") {
-//       articles.forEach(val => {
-//         val.style.color = 'black';
-//         val.style.backgroundColor = '#dae1e7';
-//       })
-//       document.querySelector('body').style.backgroundColor = "#ffffff";
-//       document.querySelectorAll('article a').forEach(val => {
-//           val.style.color = '#142850';
-//       })
+    if (article.style.color == "white") {
+      articles.forEach(val => {
+        val.style.color = 'black';
+        val.style.backgroundColor = '#dae1e7';
+      })
+      document.querySelector('body').style.backgroundColor = "#ffffff";
+      document.querySelectorAll('article a').forEach(val => {
+          val.style.color = '#142850';
+      })
 
         
-//     } else {
-//         articles.forEach((val) => {
-//             val.style.color = 'white';
-//             val.style.backgroundColor = '#2E2E2E';
-//         })
-//         document.querySelector('body').style.backgroundColor = "black";
-//         document.querySelectorAll('article a').forEach(val => {
-//             val.style.color = 'white';
-//         })
-//     }
+    } else {
+        articles.forEach((val) => {
+            val.style.color = 'white';
+            val.style.backgroundColor = '#2E2E2E';
+        })
+        document.querySelector('body').style.backgroundColor = "black";
+        document.querySelectorAll('article a').forEach(val => {
+            val.style.color = 'white';
+        })
+    }
 
-// });
+});
 
 
 // PAGE SELECTOR
@@ -149,3 +131,37 @@ for (let i = 0; i < projectSelector.length; i++) {
             }
     }})
 }
+
+// ANIMATE EMAIL MODAL
+
+const modal = document.querySelector('#modal');
+const modalContent = document.querySelector('#modal-content');
+
+function hideModal () {
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 300);
+}
+
+function slideBack () {
+    modalContent.classList.remove('slide-up');    
+    modalContent.classList.add('slide-back');
+}
+
+document.querySelector('#email').addEventListener('click',() => {
+    modal.style.display = 'block';
+    modalContent.classList.remove('slide-back');    
+    modalContent.classList.add('slide-up');
+})
+
+document.querySelector('#modal-x').addEventListener('click', () => {
+    slideBack();
+    hideModal();
+})
+
+modal.addEventListener('click', () => {
+    if (event.target === modal) {
+        slideBack();
+        hideModal();
+    }
+})

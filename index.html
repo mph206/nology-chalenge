@@ -33,16 +33,16 @@
             </p>
             <p>
                 Welcome to my website.
-            </p>
+            </p><br>
             <p>
                 I'm a millenial living in Bristol with a background in Operations. In my previous roles, be they at national charities or green tech unicorns, I've often found our staff limited by the quality of our systems. Vast resources are thrown at problems that are ripe for automation, leaving workers less time to deal with other important tasks. 
-            </p>
+            </p><br>
             <p>
                 These roles have seen me work with large spreadsheets, building and automating reporting to drive improvements, and it's always here that I've felt most at home. This led me to delve into the world of coding and undertaking self-study. Having found the _nology course online and attended a taster session I applied and was accepted after a fun 'interview'. 
-            </p>    
+            </p><br>
             <p> 
                 I am very excited for the start of the course and look forward to building applications which enable people to put their time to best use and work in a frictionless way. <strong>Roll on May 18th!</strong>
-            </p>
+            </p><br>
             <p>
                 Click <a class="about-link">here to learn more about me</a>, or <a class="projects-link">here to see my projects (ever a work-in-progress)</a>!
             </p>
@@ -160,25 +160,25 @@
     <footer>
         <a href="https://www.linkedin.com/in/martin-harrison-b8b02a46/" alt="My linkedin profile" target="_blank"><img src="img/linkedin.svg" alt="linkedIn profile"></a>
         <a href="https://github.com/mph206" target="_blank"><img src="img/github.svg" alt="GitHub profile"></a>
-        <a href=""><img src="img/email.svg" alt="Email me"></a>
+        <a id='email'><img src="img/email.svg" alt="Email me"></a>
         <a id="dark-toggle"><img src="img/dark-toggle.svg"></a>
     </footer>
 
   
-<!-- 
+<!-- Email modal -->
 
-    Email modal
-        
- <button id="email"><img src="img/email.svg" alt="Email me"></button>
-
- Modal pop up box
- <div id="email-modal">
-     <div id="email-form">
-         <label for="email"></label><input type="email">
-         <input type="text">
-         <button type="submit">Submit</button>
-     </div>
- </div> -->
+<div id='modal'>
+    <form action='' method = '' id="modal-content">
+        <h2>Email me</h2>
+        <img id="modal-x" src="img/x.svg" alt="">
+        <label for="email-input">Email</label>
+        <input type="email" id='email-input' name='email' required placeholder='Your email address'>
+        <label for="textarea">Your query</label>
+        <textarea id='textarea' required placeholder='Please enter your query'></textarea>
+        <button id='submit' type="submit">Submit</button>
+    </form>
+</div>
+ 
  <script src ="script.js"></script>
 </body>
 </html>

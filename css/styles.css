@@ -162,6 +162,68 @@ footer a {
     padding: 0 10px;
 }
 
+#modal {
+    position: fixed;
+    display: none;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    height: 100%; 
+    width: 100%;
+    background-color: rgba(0,0,0,0.6)
+}
+
+#modal-content{
+    background-color: #dae1e7;
+    width: 70%;
+    height: auto;
+    margin: 10% auto;
+    padding: 12px;
+    border-radius: 2%;
+    font-size: 16px;
+    line-height: 1.5em;
+    transition: margin-right 1s;
+    position: relative;
+}
+
+input,
+label {
+    display: block;
+    text-align: left;
+    margin: 0px;
+}
+
+#modal-x {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#email-input, 
+#textarea {
+    font-size: inherit;
+    border-radius: 5%;
+    font-family: inherit;
+    font-size: inherit;
+    text-align: start;
+    width: 100%;
+    padding: 5px;
+}
+
+#textarea {
+    height: 10em;
+}
+
+#submit {
+    background-color: #142850;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 18px;
+    border-radius:10%;
+    margin-top: 5%;
+}
+
 /* Pseudo styles */
 nav a:hover, 
 nav a:active {
@@ -183,16 +245,15 @@ nav a:active {
     bottom: 100px;
 }
 
-.project-selector li:hover {
+.project-selector li:hover, 
+#modal-x:hover,
+#submit:hover,
+#dark-toggle:hover {
     cursor: pointer;
 }
 
 a:hover {
     text-decoration: none;
-    cursor: pointer;
-}
-
-#dark-toggle:hover {
     cursor: pointer;
 }
 
@@ -207,6 +268,10 @@ a:hover {
 @media only screen and (min-width: 810px) {
     main {
         height: 1000px;
+    }
+
+    #modal-content {
+        width: 50%;
     }
 }
 
@@ -228,6 +293,10 @@ a:hover {
 
     .project-description {
         flex-basis: 35%;
+    }
+
+    #modal-content {
+        width: 40%;
     }
 
 }
@@ -264,7 +333,6 @@ a:hover {
     }
 
 }
-
 
 /* ANIMATE PAGE CHANGES WITH KEYFRAMES  */
 
@@ -334,42 +402,7 @@ a:hover {
     animation-fill-mode: both;
 }
 
-@keyframes article-to-dark {
-    0% {
-        color: black; 
-        background-color: #dae1e7;
-    }
-
-    100% {
-        color: white; 
-        background-color: #2E2E2E;
-    }
-}
-
-.todark {
-    animation-name: article-to-dark; 
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in;
-    animation-duration: 1s;
-    animation-direction: normal;
-}
-
-.tolight {
-    animation-name: article-to-dark; 
-    animation-fill-mode: both;
-    animation-timing-function: ease-in;
-    animation-duration: 1s;
-    animation-direction: reverse;
-}
-
-@keyframes body-to-dark {
-    
-}
-
-@keyframes article-a-to-dark {
-    
-}
-
+/* Animation for project selection */
 @keyframes slide-down {
     
     from {
@@ -386,4 +419,41 @@ a:hover {
 .slide-down {
     animation-name: slide-down;
     animation-duration: .5s;
+}
+
+
+/* Animate email modal */
+
+@keyframes slide-up {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-up {
+    animation-name: slide-up;
+    animation-duration: .3s;
+    animation-fill-mode: both;
+}
+
+@keyframes slide-back {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+         transform: translateY(100%);
+         opacity: 0;
+    }
+}
+
+.slide-back {
+    animation-name: slide-back;
+    animation-duration: .3s;
+    animation-fill-mode: both;
 }
